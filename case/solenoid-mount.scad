@@ -1,11 +1,9 @@
 module SolenoidMount() {
-  x_padding = 0;
-  y_padding = 0;
   bottom_padding = 2;
 
   solenoid_z = 12;
-  solenoid_x = 11 + (2 * x_padding);
-  solenoid_y = 20.5 + (2 * y_padding);
+  solenoid_x = 11;
+  solenoid_y = 20.5;
 
   wall_thickness = 1;
 
