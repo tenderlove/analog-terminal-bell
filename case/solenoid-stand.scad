@@ -23,8 +23,8 @@ module SolenoidStand(z, bottom_shift, ridge_thickness) {
 
     bottom_square = translate_points(center_square_points(bottom_x, bottom_y, 0), 0, ((top_y / 2) - (bottom_y / 2)) - bottom_shift);
     post_points = [
-      [bottom_square[2][0], bottom_square[2][1], ridge_thickness],
-      [bottom_square[3][0], bottom_square[3][1], ridge_thickness],
+      [bottom_square[2][0], bottom_square[2][1], ridge_thickness - 1],
+      [bottom_square[3][0], bottom_square[3][1], ridge_thickness - 1],
     ];
 
     TrapezoidPoints = concat(
