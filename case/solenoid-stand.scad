@@ -21,19 +21,29 @@ module SolenoidStand(z, bottom_shift, ridge_thickness) {
 
     solenoid_mounting_z = z;
 
+    bottom_square = translate_points(center_square_points(bottom_x, bottom_y, 0), 0, ((top_y / 2) - (bottom_y / 2)) - bottom_shift);
+    post_points = [
+      [bottom_square[2][0], bottom_square[2][1], ridge_thickness],
+      [bottom_square[3][0], bottom_square[3][1], ridge_thickness],
+    ];
+
     TrapezoidPoints = concat(
-        translate_points(center_square_points(bottom_x, bottom_y, 0), 0, bottom_shift), // bottom square
-        center_square_points(top_x, top_y, solenoid_mounting_z));
+        bottom_square,
+        center_square_points(top_x, top_y, solenoid_mounting_z),
+        post_points);
+
+    echo(TrapezoidPoints);
 
     CubeFaces = [
       [0,1,2,3],  // bottom
       [4,5,1,0],  // front
       [7,6,5,4],  // top
-      [5,6,2,1],  // right
-      [6,7,3,2],  // back
-      [7,4,0,3]]; // left
+      [5,6,8,2,1],  // right
+      [6,7,9,3,2,8],  // back
+      [7,4,0,3,9],   // left
+    ];
 
-    polyhedron(TrapezoidPoints, CubeFaces);
+    polyhedron(TrapezoidPoints, CubeFaces, convexity = 10);
 }
 
 use <solenoid-mount.scad>
