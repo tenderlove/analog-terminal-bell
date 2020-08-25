@@ -26,7 +26,7 @@ use <solenoid-stand.scad>
 use <solenoid-mount.scad>
 
 max_overhang = bell_bottom_radius - bell_radius;
-distance_from_bell_to_solenoid_case = 4;
+distance_from_bell_to_solenoid_case = 2.5;
 overhang = max_overhang - distance_from_bell_to_solenoid_case;
 
 module Solenoid() {
@@ -69,11 +69,34 @@ translate([0, (-(bell_bottom_radius + (solenoid_y / 2))) + overhang, plate_thick
 
 BellBase();
 
-rotate(90) {
-  translate([0, 0, plate_thickness]) {
+module OuterText(txt, r, size=10, font) {
+  angle = 180 * size / (PI * r);
+  for (i = [0:len(txt) - 1]) {
+    rotate([0, 0, -(i + 0.5) * angle])
+    translate([0, r])
+    text(txt[i], size=size, halign="center", valign="baseline", font=font);
+  }
+}
+
+f1 = "Helvetica Neue:style=Bold";
+f = "Cochin:style=Bold";
+
+translate([0, 0, plate_thickness]) {
+  linear_extrude(1) {
+    rotate(325)
+      OuterText(txt = "ANALOG", r = (bell_bottom_radius - 12), font = f1);
+
+    rotate(165)
+      OuterText(txt = "TERMINAL", r = (bell_bottom_radius - 12), font = f1);
+  }
+}
+
+rotate(270) {
+  translate([0, 4, plate_thickness]) {
     linear_extrude(1) {
       //text("\u30D9\u30EB", font = "Hiragino Mincho Pro:style=W3", halign = "center", valign = "center", size = 30);
-      text(chr(127015), font = "Apple Symbols:style=Regular", halign = "center", valign = "center", size = 50);
+      //text("Bell", font = "Star Trek Future:style=Regular", halign = "center", valign = "center", size = 40);
+      text("BELL", font = f, halign = "center", valign = "center", size = 20);
     }
   }
 }
