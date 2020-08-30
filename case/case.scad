@@ -15,6 +15,7 @@ solenoid_x = 11;
 solenoid_y = 20.5;
 solenoid_mount_wall_thickness = 1;
 
+outer_radius = bell_bottom_radius + bottom_ridge_x;
 center_of_bell_ridge_z = to_bell_z + (bell_ridge_z / 2);
 
 // align the center of the bell ridge with the center of the solenoid
@@ -24,6 +25,7 @@ post_bottom_y = ((solenoid_y / 2) - (bell_bottom_radius - bell_radius)) + 1;
 
 use <solenoid-stand.scad>
 use <solenoid-mount.scad>
+use <pcb.scad>
 
 max_overhang = bell_bottom_radius - bell_radius;
 distance_from_bell_to_solenoid_case = 2.5;
@@ -32,7 +34,8 @@ overhang = max_overhang - distance_from_bell_to_solenoid_case;
 module Solenoid() {
   post_bottom_thickness = bottom_ridge_x;
 
-  SolenoidStand(solenoid_mounting_z - solenoid_mount_wall_thickness, overhang + solenoid_mount_wall_thickness, bottom_ridge_x);
+echo(outer_radius);
+  SolenoidStand(solenoid_mounting_z - solenoid_mount_wall_thickness, overhang + solenoid_mount_wall_thickness, bottom_ridge_x, outer_radius);
   translate([0, 0, solenoid_mounting_z - solenoid_mount_wall_thickness])
   SolenoidMount();
 }
@@ -63,11 +66,16 @@ module BellBase() {
   }
 }
 
+BellBase();
+
 translate([0, (-(bell_bottom_radius + (solenoid_y / 2))) + overhang, plate_thickness]) {
   Solenoid();
 }
 
-BellBase();
+//translate([((34 + 2 + plate_thickness) / 2) + ((solenoid_x + 1) / 2), -(bell_bottom_radius + ((33 + 2 + plate_thickness) / 2)), 0])
+translate([((34 + 2 + plate_thickness + solenoid_x + 2) / 2) + 2, -(bell_bottom_radius + ((33 + 2 + plate_thickness) / 2)) + 0.7, 0])
+  rotate(90)
+  PCBCase(plate_thickness, plate_thickness, 6);
 
 module OuterText(txt, r, size=10, font) {
   angle = 180 * size / (PI * r);
@@ -100,11 +108,3 @@ rotate(270) {
     }
   }
 }
-/*
-MAHJONG TILE SUMMER
-Unicode: U+1F027, UTF-8: F0 9F 80 A7
-
-
-WHITE SMILING FACE
-Unicode: U+263A U+FE0E, UTF-8: E2 98 BA EF B8 8E
-*/

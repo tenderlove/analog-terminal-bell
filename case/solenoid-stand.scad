@@ -1,4 +1,4 @@
-module SolenoidStand(z, bottom_shift, ridge_thickness) {
+module SolenoidStand(z, bottom_shift, ridge_thickness, outer_radius) {
   solenoid_x = 11;
   solenoid_y = 20.5;
   wall_thickness = 1;
@@ -21,7 +21,15 @@ module SolenoidStand(z, bottom_shift, ridge_thickness) {
 
     solenoid_mounting_z = z;
 
-    bottom_square = translate_points(center_square_points(bottom_x, bottom_y, 0), 0, ((top_y / 2) - (bottom_y / 2)) - bottom_shift);
+    bottom_square_points = [
+      [-(bottom_x / 2), -(bottom_y / 2), 0],
+      [ (bottom_x / 2), -(bottom_y / 2), 0],
+      [ (bottom_x / 2),  (bottom_y / 2), 0],
+      [-(bottom_x / 2),  (bottom_y / 2), 0],
+    ];
+
+    //bottom_square = translate_points(bottom_square_points, 0, ((top_y / 2) - (bottom_y / 2)) - bottom_shift);
+    bottom_square = translate_points(bottom_square_points, 0, ((top_y / 2) - (bottom_y / 2)) - bottom_shift);
     post_points = [
       [bottom_square[2][0], bottom_square[2][1], ridge_thickness - 1],
       [bottom_square[3][0], bottom_square[3][1], ridge_thickness - 1],
@@ -50,4 +58,4 @@ use <solenoid-mount.scad>
 
 translate([0, 0, 15])
 SolenoidMount();
-SolenoidStand(15, 5, 5);
+SolenoidStand(15, 5, 5, 48);
