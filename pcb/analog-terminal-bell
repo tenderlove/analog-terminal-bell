@@ -1,0 +1,31 @@
+"Source:","/Users/aaron/git/analog-terminal-bell/pcb/analog-terminal-bell.sch"
+"Date:","Sunday, August 30, 2020 at 12:50:47 PM"
+"Tool:","Eeschema (5.1.5-0-10_14)"
+"Generator:","/Applications/KiCad/kicad.app/Contents/SharedSupport/plugins/bom_csv_grouped_by_value.py"
+"Component Count:","8"
+
+"Individual Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet"
+"","","C1","47nf","Device:C","Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm","~"
+"","","D1","1N4004","Diode:1N4004","Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal","http://www.vishay.com/docs/88503/1n4001.pdf"
+"","","J1","USB_B_Mini","Connector:USB_B_Mini","digikey:USB_Mini_B_Female_548190519","~"
+"","","J2","Solenoid","Connector:Conn_01x02_Male","Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical","~"
+"","","Q1","TIP122","Transistor_BJT:TIP122","Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown","http://www.fairchildsemi.com/ds/TI/TIP120.pdf"
+"","","R1","10K","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~"
+"","","R2","1K","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~"
+"","","U1","MCP2221AxP","Interface_USB:MCP2221AxP","Package_DIP:DIP-14_W7.62mm","http://ww1.microchip.com/downloads/en/DeviceDoc/20005565B.pdf"
+
+
+
+"Collated Components:"
+
+"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet"
+"1","1","C1","47nf","Device:C","Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm","~"
+"2","1","D1","1N4004","Diode:1N4004","Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal","http://www.vishay.com/docs/88503/1n4001.pdf"
+"3","1","J1","USB_B_Mini","Connector:USB_B_Mini","digikey:USB_Mini_B_Female_548190519","~"
+"4","1","J2","Solenoid","Connector:Conn_01x02_Male","Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical","~"
+"5","1","Q1","TIP122","Transistor_BJT:TIP122","Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown","http://www.fairchildsemi.com/ds/TI/TIP120.pdf"
+"6","1","R1","10K","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~"
+"7","1","R2","1K","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~"
+"8","1","U1","MCP2221AxP","Interface_USB:MCP2221AxP","Package_DIP:DIP-14_W7.62mm","http://ww1.microchip.com/downloads/en/DeviceDoc/20005565B.pdf"
