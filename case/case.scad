@@ -72,7 +72,6 @@ translate([0, (-(bell_bottom_radius + (solenoid_y / 2))) + overhang, plate_thick
   Solenoid();
 }
 
-//translate([((34 + 2 + plate_thickness) / 2) + ((solenoid_x + 1) / 2), -(bell_bottom_radius + ((33 + 2 + plate_thickness) / 2)), 0])
 translate([((34 + 2 + plate_thickness + solenoid_x + 2) / 2) + 2, -(bell_bottom_radius + ((33 + 2 + plate_thickness) / 2)) + 0.7, 0])
   rotate(90)
   PCBCase(plate_thickness, plate_thickness, 6);
@@ -102,8 +101,6 @@ translate([0, 0, plate_thickness]) {
 rotate(270) {
   translate([0, 4, plate_thickness]) {
     linear_extrude(1) {
-      //text("\u30D9\u30EB", font = "Hiragino Mincho Pro:style=W3", halign = "center", valign = "center", size = 30);
-      //text("Bell", font = "Star Trek Future:style=Regular", halign = "center", valign = "center", size = 40);
       text("BELL", font = f, halign = "center", valign = "center", size = 20);
     }
   }
