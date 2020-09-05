@@ -32,7 +32,8 @@ chip.gp_settings = settings
 ## Controlling the Analog Terminal Bell
 
 The Analog Terminal Bell can be controlled with Circuit Python, but I don't
-know how.  I've been testing it with a Ruby library called "UChip".
+know how.  I've been testing it with a Ruby library called "UChip".  To install
+the gem, just do `gem install uchip`.
 
 Here is the code to control the bell with Ruby:
 
