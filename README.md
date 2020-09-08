@@ -6,25 +6,28 @@ The Analog Terminal Bell is a bell that rings any time a bell character is
 displayed on your terminal.  Simply plug the bell in to USB and enable "Analog
 Bell" in your terminal settings.
 
+Never miss a terminal bell notification again!
+
 Here is a photo of the bell:
 
 ![Analog Terminal Bell Photo](photos/a.jpeg)
 
 Here is a video explanation:
 
-[![Analog Terminal Bell](https://img.youtube.com/vi/X6NR0m1ehpg/0.jpg)](https://www.youtube.com/watch?v=X6NR0m1ehpg)
+[![Analog Terminal Bell](https://img.youtube.com/vi/uG8VpN6Z_YA/0.jpg)](https://www.youtube.com/watch?v=uG8VpN6Z_YA)
 
-## Actual Non-Joke Details
+## Actual Product Details
 
 This bell is not actually for sale.  You have to build it yourself!  This
 project uses an MCP2221A microchip to drive a solenoid and hit a bell.
-
 
 ### Electronic Hardware
 
 Information about the electronic hardware to build this project can be found in
 the `pcb` folder.  Just check out the [README](pcb/README.md) there for details
 on how to build the electronic hardware for this project.
+
+I used through hole components on the PCB to make assembly as easy as possible.
 
 ### Software
 
