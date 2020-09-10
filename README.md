@@ -14,7 +14,7 @@ Here is a photo of the bell:
 
 Here is a video explanation:
 
-[![Analog Terminal Bell](https://img.youtube.com/vi/uG8VpN6Z_YA/0.jpg)](https://www.youtube.com/watch?v=uG8VpN6Z_YA)
+[![Analog Terminal Bell](https://yt-embed.herokuapp.com/embed?v=uG8VpN6Z_YA)](https://www.youtube.com/watch?v=uG8VpN6Z_YA)
 
 ## Actual Product Details
 
