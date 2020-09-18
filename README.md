@@ -29,6 +29,10 @@ on how to build the electronic hardware for this project.
 
 I used through hole components on the PCB to make assembly as easy as possible.
 
+### Physical Hardware
+
+The bell can be found at many stores like [amazon](https://www.amzn.com/s?k=terminal+bell) or [staples](https://www.staples.com/call+bell/directory_call%2520bell)
+
 ### Software
 
 Unlike an Arduino, this microchip doesn't need any firmware, we can control it
