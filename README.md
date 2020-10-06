@@ -31,7 +31,7 @@ I used through hole components on the PCB to make assembly as easy as possible.
 
 ### Physical Hardware
 
-The bell can be found at many stores like [amazon](https://www.amzn.com/s?k=terminal+bell) or [staples](https://www.staples.com/call+bell/directory_call%2520bell)
+The bell can be found at many stores like [amazon](https://www.amzn.com/s?k=bell) or [staples](https://www.staples.com/call+bell/directory_call%2520bell)
 
 ### Software
 
